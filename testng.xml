@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="test.java.utils.Listeners.TestListener"/>
+        <listener class-name="test.java.utils.Listeners.AnnotationTransformer"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="C:/Users/wmachrao/OneDrive - Capgemini/Desktop/MavenVersionProject">
+        <classes>
+            <class name="test.java.Tests.ConnexionTest">
+                <methods>
+
+                    <include name="TestconnexionDone"/>
+                    <include name="TestDeDeconnexion"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+    <test verbose="2" preserve-order="true" name="C:/User/wmachrao/OneDrive - Capgemini/Desktop/MavenVersionProject">
+        <classes>
+            <class name="test.java.Tests.InscriptionPageTest">
+                <methods>
+                    <include name="Testdinscription"/>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
