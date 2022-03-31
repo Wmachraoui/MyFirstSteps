@@ -37,4 +37,10 @@ public class DashbordPage extends ApplicationCommon {
         return new PageDacceuil(driver);
 
     }
+    public String getConnexionDone (){
+        return driver.findElement(logOutButton).getText();
+    }
+    public String getInscriptionDone (){
+        return driver.findElement(logOutButton).getText();
+    }
 }

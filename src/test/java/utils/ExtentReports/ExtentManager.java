@@ -9,8 +9,9 @@ public class ExtentManager {
         ExtentSparkReporter reporter = new ExtentSparkReporter("src/test/java/utils/ExtentReports/extent-report.html");
         reporter.config().setReportName("Sample Extent Report");
         extentReports.attachReporter(reporter);
-        extentReports.setSystemInfo("Blog Name", "SW Test Academy");
-        extentReports.setSystemInfo("Author", "Onur Baskirt");
+        extentReports.setSystemInfo("APPlication Name", "Practice Automation Testing");
+        extentReports.setSystemInfo("Author", "WISSEM MACHRAOUI");
+        extentReports.setSystemInfo("selnium version","4.1.2");
         return extentReports;
     }
 

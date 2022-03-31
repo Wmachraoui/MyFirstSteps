@@ -13,7 +13,7 @@ public class InscriptionPage extends ApplicationCommon {
     By Accountselector = By.cssSelector("#menu-item-50 > a");
     By chooseyourlogin = By.cssSelector("#reg_email");
     By chooseyourpwd = By.cssSelector("#reg_password");
-   // By RegisterButton = By.cssSelector(".woocomerce-FormRow > input:nth-child(3)");
+    By InscriptionFailed = By.cssSelector(".u-column2 > h2:nth-child(1)");
     By RegisterButton = By.cssSelector("[name=register]");
      By logoselector = By.cssSelector("#site-logo > a > img");
 
@@ -24,20 +24,32 @@ public class InscriptionPage extends ApplicationCommon {
     public InscriptionPage(WebDriver driver) {
         this.driver = driver;
     }
-    public DashbordPage inscription (String login1 ,String mdp){
-        cliquerElement(Accountselector,"lien pour la page my Account");
-        saisirTexte(chooseyourlogin,login1);
-        saisirTexte(chooseyourpwd,mdp);
-        cliquerElement(RegisterButton,"button d'inscription");
-        return new DashbordPage(driver);
+    public InscriptionPage inscriptionFailed (String login1 ,String mdp) {
+        cliquerElement(Accountselector, "lien pour la page my Account");
+        saisirTexte(chooseyourlogin, login1);
+        saisirTexte(chooseyourpwd, mdp);
+        cliquerElement(RegisterButton, "button d'inscription");
 
-
-
+        return new InscriptionPage(driver);
     }
+        public DashbordPage inscriptionDone (String newlogin ,String validmdp) {
+            cliquerElement(Accountselector, "lien pour la page my Account");
+            saisirTexte(chooseyourlogin, newlogin);
+            saisirTexte(chooseyourpwd, validmdp);
+            cliquerElement(RegisterButton, "button d'inscription");
+
+            return new DashbordPage(driver);
+
+
+        }
+
     public PageDacceuil logoPresent (){
       verifierVisibiliteElement(logoselector).click();
 
       return new PageDacceuil(driver);
 
+    }
+    public String getinscriptionFailed (){
+        return driver.findElement(InscriptionFailed).getText();
     }
 }
