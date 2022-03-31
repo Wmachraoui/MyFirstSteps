@@ -7,7 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class ApplicationCommon {
-     public WebDriver driver;
+     protected WebDriver driver;
     // protected WebDriverWait wait;
      //Log
      protected static final Logger LOG = LoggerFactory.getLogger("ApplicationCommonScript");

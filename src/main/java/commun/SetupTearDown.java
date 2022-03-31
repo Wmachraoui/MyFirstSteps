@@ -16,7 +16,7 @@ import java.util.Properties;
 public class SetupTearDown extends ApplicationCommon {
     public static Properties prop;
 
-    @BeforeTest
+    @BeforeMethod
     public void setup() throws Exception {
         BasicConfigurator.configure();
         //  System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
@@ -57,7 +57,7 @@ public class SetupTearDown extends ApplicationCommon {
 
         }
     }
-    @AfterTest
+    @AfterMethod
     public void quit() {
         driver.quit();
         LOG.info("Browser is close");

@@ -4,23 +4,19 @@
     <listeners>
         <listener class-name="test.java.utils.Listeners.TestListener"/>
     </listeners>
-    <test verbose="2" preserve-order="true" name="C:/Users/wmachrao/OneDrive - Capgemini/Desktop/MavenVersionProject">
+    <test verbose="2" preserve-order="true" name="US2">
         <classes>
             <class name="test.java.Tests.ConnexionTest">
                 <methods>
-                    <include name="TestconnexionFailed"/>
                     <include name="TestconnexionDone"/>
                     <include name="TestDeDeconnexion"/>
+                    <include name="TestconnexionFailed"/>
                     <include name="logoPresent"/>
                     <include name="TestRememberme"/>
-                </methods>
-            </class>
-            <class name="test.java.Tests.InscriptionPageTest">
-                <methods>
-                    <include name="TestdinscriptionFailed"/>
-                    <include name="TestdinscriptionDone"/>
+
                 </methods>
             </class>
         </classes>
     </test>
+
 </suite>

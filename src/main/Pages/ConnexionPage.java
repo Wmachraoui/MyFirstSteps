@@ -17,6 +17,8 @@ public class ConnexionPage extends ApplicationCommon {
     By Rememberlink = By.cssSelector("#rememberme");
     By LostPwd = By.cssSelector("#customer_login > div.u-column1.col-1 > form > p.woocommerce-LostPassword.lost_password > a");
     By ResetPwdButton = By.xpath("//*[@id=\"page-36\"]/div/div[1]/form/p[3]/input[2]");
+    By ERROR = By.cssSelector(".woocommerce-MyAccount-content > p:nth-child(1)");
+    By logOutButton = By.cssSelector("li.woocommerce-MyAccount-navigation-link:nth-child(6) > a:nth-child(1)");
 
     public ConnexionPage(WebDriver driver) {
 
@@ -63,10 +65,9 @@ public class ConnexionPage extends ApplicationCommon {
         String selectLinkOpeninNewTab = Keys.chord(Keys.CONTROL, Keys.RETURN);
         driver.findElement(By.linkText("Shop")).sendKeys(selectLinkOpeninNewTab);
         ArrayList<String> tab2=new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tab2.get(1)).switchTo().window(tab2.get(0)).close();
         driver.switchTo().window(tab2.get(1));
         driver.get("http://practice.automationtesting.in/my-account/");
-        driver.switchTo().window(tab2.get(0));
-        //driver.close();
         return new DashbordPage(driver);
     }
     public MyemailPage LostPawd (String myemail){
@@ -81,10 +82,15 @@ public class ConnexionPage extends ApplicationCommon {
         driver.get("https://yopmail.com/fr/wm");
         driver.manage().deleteAllCookies();
         driver.switchTo().window(tabs.get(0));
-       // driver.close();
+        driver.close();
+        driver.quit();
 
         return new MyemailPage(driver);
 
     }
+    public String getConnexionFailed (){
+        return driver.findElement(ERROR).getText();
+    }
+
 
 }
