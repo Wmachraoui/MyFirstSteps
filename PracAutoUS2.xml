@@ -6,7 +6,7 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="US2">
         <classes>
-            <class name="test.java.Tests.ConnexionTest">
+            <class name="test.java.Tests.US2.ConnexionTest">
                 <methods>
                     <include name="TestconnexionDone"/>
                     <include name="TestDeDeconnexion"/>

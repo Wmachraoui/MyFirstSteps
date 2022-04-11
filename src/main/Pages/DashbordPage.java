@@ -12,7 +12,7 @@ public class DashbordPage extends ApplicationCommon {
     By usernameselector = By.id("username");
     By password = By.cssSelector("#password");
     By Buttonseconnecter =By.cssSelector("[name=login]");
-    By Accountselector = By.cssSelector("#menu-item-50 > a");
+    By InscriDone = By.cssSelector(".woocommerce-MyAccount-content > p:nth-child(2)");
     By logoselector = By.cssSelector("#site-logo > a > img");
     @FindBy(css = "logOutButton")
     private WebElement  exit ;
@@ -41,6 +41,7 @@ public class DashbordPage extends ApplicationCommon {
         return driver.findElement(logOutButton).getText();
     }
     public String getInscriptionDone (){
-        return driver.findElement(logOutButton).getText();
+        return driver.findElement(InscriDone).getText();
     }
 }
+//mvn test terminal

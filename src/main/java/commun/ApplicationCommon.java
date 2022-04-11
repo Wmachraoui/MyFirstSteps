@@ -10,7 +10,7 @@ public class ApplicationCommon {
      protected WebDriver driver;
     // protected WebDriverWait wait;
      //Log
-     protected static final Logger LOG = LoggerFactory.getLogger("ApplicationCommonScript");
+     protected static final Logger LOG = LoggerFactory.getLogger("PractAuto");
      public WebElement verifierVisibiliteElement(By elementLocator) {
           WebElement element;
           WebDriverWait wait = new WebDriverWait(driver,50);
@@ -31,6 +31,13 @@ public class ApplicationCommon {
           verifierVisibiliteElement(elementLocator);
           driver.findElement(elementLocator).click();
      }
+
+    /**
+     * jdjjddhd dgdgdg
+     * @param elementLocator
+     * @return
+     */
+    //JavaDoc
      public WebElement clickableelement (By elementLocator){
          WebElement element;
          WebDriverWait wait = new WebDriverWait(driver,50);
@@ -46,5 +53,8 @@ public class ApplicationCommon {
 
     public WebDriver getDriver() {
         return driver;
+
     }
+
 }
+

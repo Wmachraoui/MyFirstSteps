@@ -6,19 +6,55 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="C:/Users/wmachrao/OneDrive - Capgemini/Desktop/MavenVersionProject">
         <classes>
-            <class name="test.java.Tests.ConnexionTest">
-                <methods>
-                    <include name="TestconnexionFailed"/>
-                    <include name="TestconnexionDone"/>
-                    <include name="TestDeDeconnexion"/>
-                    <include name="logoPresent"/>
-                    <include name="TestRememberme"/>
-                </methods>
-            </class>
-            <class name="test.java.Tests.InscriptionPageTest">
+            <class name="test.java.Tests.US1.PRACAUTO_07">
                 <methods>
                     <include name="TestdinscriptionFailed"/>
                     <include name="TestdinscriptionDone"/>
+                </methods>
+            </class>
+            <class name="test.java.Tests.US2.PRACAUTO_24">
+                <methods>
+                    <include name="TestconnexionFailed"/>
+                    <include name="TestconnexionDone"/>
+                    <include name="TestRememberme"/>
+                    <include name="LostMyPawd"/>
+                </methods>
+            </class>
+            <class name="test.java.Tests.US3.PRACAUTO_25">
+                <methods>
+                    <include name="logoPresent"/>
+                </methods>
+            </class>
+            <class name="test.java.Tests.US6.PRACAUTO_28">
+                <methods>
+                    <include name="TestDeDeconnexion"/>
+                </methods>
+            </class>
+            <class name="test.java.Tests.US7.PRACTAUTO_29">
+                <methods>
+                    <include name="addArticleToCart"/>
+                    <include name="addArticleToCartByImage"/>
+                    <include name="addArticleToCartFromShopage"/>
+                    <include name="addArticleToCartByLabel"/>
+                    <include name="addArticleToCartByPrice"/>
+                    <include name="verifyFilterByTheme"/>
+                    <include name="verifyFilterByPrice1"/>
+                    <include name="verifyViewBasket"/>
+                    <include name="SaleArticlePresent"/>
+                </methods>
+            </class>
+            <class name="test.java.Tests.US9.PRACAUTO_32">
+                <methods>
+                    <include name="DeletArticlFromBascket"/>
+                    <include name="GoToPayement"/>
+                    <include name="UpdateNombreDarticles"/>
+                </methods>
+            </class>
+            <class name="test.java.Tests.US8.PRACAUTO_30">
+
+                <methods>
+                    <include name="AddArticlFromProductPage"/>
+                    <include name="MakeLaQuantiteNull"/>
                 </methods>
             </class>
         </classes>
