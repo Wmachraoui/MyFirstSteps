@@ -1,7 +1,8 @@
 package main.java.commun;
 
-import org.apache.log4j.BasicConfigurator;
+
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -18,7 +19,8 @@ public class SetupTearDown extends ApplicationCommon {
 
     @BeforeMethod
     public void setup() throws Exception {
-        BasicConfigurator.configure();
+        // BasicConfigurator.configure(); // obligatoire pour les log4j not for Log4j2
+        //Logger.getRootLogger().setLevel(Level.WARN.OFF);
         //  System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
         //  System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "null");
 
@@ -31,13 +33,16 @@ public class SetupTearDown extends ApplicationCommon {
         //url
         String url = prop.getProperty("url");
         //////////////////////////Check if parameter passed  is 'firefox'///////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         if (browsern.equalsIgnoreCase("FF")) {
 
             driver = new FirefoxDriver();
             LOG.info("FIREFOX is OPEN");
             driver.manage().window().maximize();
             driver.get(url);
-            //////////////////////Check if parameter passed  is 'EDGE' ////////////////////
+            //////////////////////Check if parameter passed  is 'EDGE' ///////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         } else if (browsern.equalsIgnoreCase("ED")) {
 
             driver = new EdgeDriver();
@@ -45,9 +50,12 @@ public class SetupTearDown extends ApplicationCommon {
             driver.manage().window().maximize();
             driver.get(url);
             /////////////Check if parameter passed  is 'CHROME'//////////////////////////
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         } else if (browsern.equalsIgnoreCase("CH")) {
-
+            // System.setProperty("webdriver.chrome.silentOutput","true");
+            // System.setProperty(ChromeDriver.SystemProperty.BROWSER_LOGFILE, "null");
             driver = new ChromeDriver();
+
             LOG.info("CHROME IS OPEN");
             driver.manage().window().maximize();
             driver.manage().deleteAllCookies();
@@ -57,9 +65,13 @@ public class SetupTearDown extends ApplicationCommon {
 
         }
     }
+
     @AfterMethod
     public void quit() {
         driver.quit();
         LOG.info("Browser is close");
+
     }
+
+
 }

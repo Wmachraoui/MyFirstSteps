@@ -1,6 +1,8 @@
 package test.java.utils.Listeners;
 
 import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import main.java.commun.ApplicationCommon;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -39,6 +41,8 @@ public class TestListener extends ApplicationCommon implements ITestListener {
         Log.info(getTestMethodName(iTestResult) + " test is succeed.");
         //ExtentReports log operation for passed tests.
         getTest().log(Status.PASS, "Test passed");
+
+
     }
     @Override
     public void onTestFailure(ITestResult iTestResult) {
@@ -50,8 +54,13 @@ public class TestListener extends ApplicationCommon implements ITestListener {
         String base64Screenshot =
                 "data:image/png;base64," + ((TakesScreenshot) Objects.requireNonNull(driver)).getScreenshotAs(OutputType.BASE64);
         //ExtentReports log and screenshot operations for failed tests.
-        getTest().log(Status.FAIL, "Test Failed",
+       getTest().log(Status.FAIL, "Test Failed",
                 getTest().addScreenCaptureFromBase64String(base64Screenshot).getModel().getMedia().get(0));
+      // System.out.println(getTest().fail(iTestResult.getThrowable()));
+       // getTest().info(MarkupHelper.createCodeBlock(iTestResult.toString()));
+        getTest().log(Status.FAIL, MarkupHelper.createLabel(iTestResult.getName()+" Test case FAILED due to below issues:", ExtentColor.RED));
+        getTest().fail(iTestResult.getThrowable());
+
     }
     @Override
     public void onTestSkipped(ITestResult iTestResult) {

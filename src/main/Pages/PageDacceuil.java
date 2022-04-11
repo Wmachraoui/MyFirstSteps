@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public class PageDacceuil extends ApplicationCommon {
     By logoselector = By.cssSelector("#site-logo > a > img");
+    By LienDeShopPage = By.cssSelector("#menu-item-40 > a");
     public PageDacceuil(WebDriver driver) {
         this.driver = driver;
     }
@@ -18,4 +19,9 @@ public class PageDacceuil extends ApplicationCommon {
        return logodisplaied;
 
     }
+    public ShopPage clickOnShopage(){
+        cliquerElement(LienDeShopPage,"Shop");
+        return new ShopPage(driver);
+    }
+
 }
